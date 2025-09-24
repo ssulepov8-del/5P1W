@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cco6c1somi3xv"]
+
+[ext_resource type="Texture2D" uid="uid://l23i27pg5akc" path="res://player/f089ee3f7f76dcaf9360bdf293daa888-no-bg-preview (carve.photos).png" id="1_dy6sc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nokgg"]
+radius = 5.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ubaqv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dy6sc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Bot" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_nokgg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.1920932e-06, -0.43750057)
+scale = Vector2(0.046875004, 0.040527344)
+sprite_frames = SubResource("SpriteFrames_ubaqv")
+animation = &"idle"
